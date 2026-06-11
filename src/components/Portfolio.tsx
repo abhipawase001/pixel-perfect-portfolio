@@ -43,7 +43,7 @@ function Reveal({
   );
 }
 
-export function Portfolio() {
+export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
   return (
     <div className="min-h-screen bg-bg text-ink font-body selection:bg-cyan selection:text-ink relative overflow-x-hidden">
       <div className="max-w-7xl mx-auto p-4 md:p-10">
