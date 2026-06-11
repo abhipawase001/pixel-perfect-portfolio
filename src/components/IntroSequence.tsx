@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import walkVideo from "@/assets/intro-walk.mp4.asset.json";
 
-const NAME = "ABHIJIT PAWASE";
+const INTRO_LINES = ["Welcome", "To", "My Portfolio"];
 
 export function IntroSequence({ onDone }: { onDone: () => void }) {
   const reduce = useReducedMotion();
@@ -33,8 +33,10 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
         transition={{ duration: 0.6 }}
         className="fixed inset-0 z-[100] bg-bg grid place-items-center"
       >
-        <div className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter text-ink">
-          ABHIJIT <span className="text-cyan">PAWASE</span>
+        <div className="font-display text-center text-5xl md:text-7xl font-extrabold tracking-tighter text-ink leading-[0.9]">
+          <div>Welcome</div>
+          <div className="text-cyan text-3xl md:text-5xl my-2">To</div>
+          <div>My Portfolio</div>
         </div>
       </motion.div>
     );
@@ -91,78 +93,35 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
         [ 19.5347° N, 74.0238° E ]
       </div>
 
-      {/* WELCOME label */}
-      <motion.div
-        initial={{ opacity: 0, y: -8 }}
-        animate={{
-          opacity: phase !== "walk" ? 1 : 0,
-          y: phase !== "walk" ? 0 : -8,
-        }}
-        transition={{ duration: 0.5 }}
-        className="absolute top-[18%] left-1/2 -translate-x-1/2 font-mono text-xs md:text-sm tracking-[0.6em] text-cyan-soft"
-      >
-        — WELCOME —
-      </motion.div>
-
-      {/* Name — per-letter crash in */}
+      {/* Intro text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-center pointer-events-none w-full px-4">
-        {/* Hairline rules */}
-        <div className="flex items-center justify-center gap-4 md:gap-8 mb-4">
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: phase !== "walk" ? 1 : 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const, delay: 0.1 }}
-            className="origin-right h-px w-24 md:w-48 bg-cyan"
-          />
-          <span className="font-mono text-[10px] tracking-[0.4em] text-cyan-soft/80">EST. 2005</span>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: phase !== "walk" ? 1 : 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const, delay: 0.1 }}
-            className="origin-left h-px w-24 md:w-48 bg-cyan"
-          />
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-x-[0.18em]">
-          {NAME.split("").map((ch, i) => (
+        <div className="flex flex-col items-center justify-center gap-1 md:gap-3">
+          {INTRO_LINES.map((line, i) => (
             <motion.span
-              key={`${ch}-${i}`}
-              initial={{ opacity: 0, y: 60, scale: 1.4, filter: "blur(18px)" }}
+              key={line}
+              initial={{ opacity: 0, y: 42, scale: 1.18, filter: "blur(14px)" }}
               animate={
                 phase !== "walk"
                   ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
-                  : { opacity: 0, y: 60, scale: 1.4, filter: "blur(18px)" }
+                  : { opacity: 0, y: 42, scale: 1.18, filter: "blur(14px)" }
               }
               transition={{
-                duration: 0.65,
-                delay: phase !== "walk" ? 0.25 + i * 0.06 : 0,
+                duration: 0.55,
+                delay: phase !== "walk" ? i * 0.14 : 0,
                 ease: [0.16, 1, 0.3, 1] as const,
               }}
-              className={`font-display font-extrabold leading-none tracking-tighter inline-block uppercase ${
-                phase === "name" ? "text-glow" : ""
+              className={`font-display font-extrabold leading-none tracking-normal inline-block ${
+                phase === "name" && i !== 1 ? "text-glow" : ""
               }`}
               style={{
-                color: ch === " " ? "transparent" : "#f8fafc",
-                fontSize: "clamp(2.8rem, 11vw, 11rem)",
+                color: i === 1 ? "#67e8f9" : "#f8fafc",
+                fontSize: i === 1 ? "clamp(2rem, 7vw, 6rem)" : "clamp(3.2rem, 12vw, 11rem)",
               }}
             >
-              {ch === " " ? "\u00A0" : ch}
+              {line}
             </motion.span>
           ))}
         </div>
-
-        {/* Tagline under */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{
-            opacity: phase === "name" ? 1 : 0,
-            y: phase === "name" ? 0 : 12,
-          }}
-          transition={{ duration: 0.6, delay: phase === "name" ? 1.4 : 0 }}
-          className="mt-6 font-mono text-[10px] md:text-xs tracking-[0.5em] text-cyan"
-        >
-          AI ARCHITECT · ENGINEER · BUILDER
-        </motion.div>
       </div>
 
       {/* Skip */}
