@@ -69,17 +69,28 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
                 <br />
                 B.Tech AI & DS @ Amrutvahini
               </div>
-              <div className="mt-8">
-                <p className="font-mono text-xs text-cyan mb-2 uppercase tracking-widest">
-                  Status
-                </p>
-                <div className="flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75 animate-ping" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan" />
-                  </span>
-                  <span className="text-sm font-semibold tracking-wide">AVAILABLE FOR HIRE</span>
+              <div className="mt-8 flex items-center justify-between gap-4">
+                <div>
+                  <p className="font-mono text-xs text-cyan mb-2 uppercase tracking-widest">
+                    Status
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75 animate-ping" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan" />
+                    </span>
+                    <span className="text-sm font-semibold tracking-wide">AVAILABLE FOR HIRE</span>
+                  </div>
                 </div>
+                {onReplayIntro && (
+                  <button
+                    onClick={onReplayIntro}
+                    className="shrink-0 font-mono text-[10px] tracking-widest uppercase border border-line hover:border-cyan hover:text-cyan transition-colors px-2 py-1 rounded-sm"
+                    title="Replay intro"
+                  >
+                    ▶ Replay
+                  </button>
+                )}
               </div>
             </div>
           </header>
