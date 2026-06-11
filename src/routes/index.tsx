@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { IntroSequence } from "@/components/IntroSequence";
 import { Portfolio } from "@/components/Portfolio";
