@@ -14,10 +14,10 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
       const t = setTimeout(onDone, 600);
       return () => clearTimeout(t);
     }
-    // Text appears immediately (1s earlier); video keeps playing underneath
+    // Text appears immediately; video keeps playing underneath
     setPhase("name");
-    const t2 = setTimeout(() => setPhase("out"), 5700);
-    const t3 = setTimeout(onDone, 6000);
+    const t2 = setTimeout(() => setPhase("out"), 3700);
+    const t3 = setTimeout(onDone, 4000);
     return () => {
       clearTimeout(t2);
       clearTimeout(t3);
