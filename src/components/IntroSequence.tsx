@@ -16,8 +16,8 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
     }
     // Text appears immediately; video keeps playing underneath
     setPhase("name");
-    const t2 = setTimeout(() => setPhase("out"), 3700);
-    const t3 = setTimeout(onDone, 4000);
+    const t2 = setTimeout(() => setPhase("out"), 1700);
+    const t3 = setTimeout(onDone, 2000);
     return () => {
       clearTimeout(t2);
       clearTimeout(t3);
