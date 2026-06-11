@@ -14,13 +14,11 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
       const t = setTimeout(onDone, 600);
       return () => clearTimeout(t);
     }
-    // 0–1000ms: video walk-in (text appears 2s earlier)
-    // 1000–5700ms: pause + welcome name reveal
-    // 5700–6000ms: fade out
+    // Text appears immediately (1s earlier than before)
     const t1 = setTimeout(() => {
       videoRef.current?.pause();
       setPhase("name");
-    }, 1000);
+    }, 0);
     const t2 = setTimeout(() => setPhase("out"), 5700);
     const t3 = setTimeout(onDone, 6000);
     return () => {
