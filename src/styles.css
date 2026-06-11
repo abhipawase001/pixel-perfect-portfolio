@@ -3,14 +3,14 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-ink: #fff5f5;
-  --color-bg: #060101;
-  --color-card: #160606;
-  --color-card-2: #200909;
-  --color-line: #3a1010;
-  --color-cyan: #ff2a3d;
-  --color-cyan-soft: #ff8a93;
-  --color-dim: #c89898;
+  --color-ink: #f8fafc;
+  --color-bg: #0a0a1a;
+  --color-card: #141432;
+  --color-card-2: #0f0f24;
+  --color-line: #1e1e5a;
+  --color-cyan: #4f46e5;
+  --color-cyan-soft: #6366f1;
+  --color-dim: #b0b0cc;
   --font-display: 'Syne', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -38,37 +38,26 @@
 @keyframes name-glow {
   0%, 100% {
     text-shadow:
-      0 0 12px rgba(255, 42, 61, 0.55),
-      0 0 32px rgba(255, 42, 61, 0.35),
-      0 0 64px rgba(255, 42, 61, 0.20);
+      0 0 12px rgba(99, 102, 241, 0.55),
+      0 0 32px rgba(79, 70, 229, 0.35),
+      0 0 64px rgba(79, 70, 229, 0.20);
   }
   50% {
     text-shadow:
-      0 0 20px rgba(255, 100, 112, 0.85),
-      0 0 50px rgba(255, 42, 61, 0.65),
-      0 0 100px rgba(255, 42, 61, 0.35);
+      0 0 22px rgba(129, 140, 248, 0.90),
+      0 0 55px rgba(99, 102, 241, 0.65),
+      0 0 110px rgba(79, 70, 229, 0.40);
   }
+}
+@keyframes rule-sweep {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 .text-glow {
   animation: name-glow 2.6s ease-in-out infinite;
 }
 
 @custom-variant dark (&:is(.dark *));
-
-
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
