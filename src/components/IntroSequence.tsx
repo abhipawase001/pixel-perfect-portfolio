@@ -19,7 +19,6 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
     const t2 = setTimeout(() => setPhase("out"), 5700);
     const t3 = setTimeout(onDone, 6000);
     return () => {
-      
       clearTimeout(t2);
       clearTimeout(t3);
     };
@@ -59,7 +58,6 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
         preload="auto"
         className="absolute inset-0 w-full h-full object-contain object-top bg-bg"
       />
-
 
       {/* Vignette */}
       <div
