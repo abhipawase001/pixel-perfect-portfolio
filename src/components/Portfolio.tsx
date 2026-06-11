@@ -12,13 +12,13 @@ const skills = [
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28, filter: "blur(8px)" },
-  show: (i = 0) => ({
+  show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const, delay: i * 0.06 },
   }),
-};
+} as const;
 
 function Tile({
   className = "",
