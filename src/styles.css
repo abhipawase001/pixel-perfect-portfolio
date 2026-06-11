@@ -35,6 +35,23 @@
   60% { transform: translate(-1px, -2px); }
   80% { transform: translate(1px, 2px); }
 }
+@keyframes name-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 12px rgba(255, 42, 61, 0.55),
+      0 0 32px rgba(255, 42, 61, 0.35),
+      0 0 64px rgba(255, 42, 61, 0.20);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(255, 100, 112, 0.85),
+      0 0 50px rgba(255, 42, 61, 0.65),
+      0 0 100px rgba(255, 42, 61, 0.35);
+  }
+}
+.text-glow {
+  animation: name-glow 2.6s ease-in-out infinite;
+}
 
 @custom-variant dark (&:is(.dark *));
 
