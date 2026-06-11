@@ -101,14 +101,14 @@ export function Portfolio() {
               AVAILABLE FOR WORK
             </div>
             <h1 className="font-display font-extrabold leading-[0.82] tracking-tighter text-[clamp(3rem,9vw,8rem)] mb-6">
-              ABHIJIT<br />
-              <span className="text-cyan" style={{ textShadow: "0 0 40px rgba(0,245,255,0.4)" }}>
+              <span className="text-ink">ABHIJIT</span><br />
+              <span className="text-cyan text-glow">
                 PAWASE.
               </span>
             </h1>
-            <p className="text-base md:text-xl text-ink/60 max-w-xl leading-relaxed">
+            <p className="text-base md:text-xl text-ink/80 max-w-xl leading-relaxed">
               AI architect & full-stack engineer crafting the future of
-              <span className="text-ink"> data-driven intelligence</span>.
+              <span className="text-cyan-soft"> data-driven intelligence</span>.
               Google Student Ambassador. National Skating Champion.
             </p>
           </Tile>
