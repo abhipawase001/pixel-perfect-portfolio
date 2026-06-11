@@ -112,14 +112,14 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
               delay: phase !== "walk" ? i * 0.18 : 0,
               ease: [0.16, 1, 0.3, 1] as const,
             }}
-            className="font-display font-extrabold leading-[0.85] tracking-tighter text-[clamp(3rem,12vw,11rem)]"
+            className={`font-display font-extrabold leading-[0.85] tracking-tighter text-[clamp(3rem,12vw,11rem)] ${phase === "name" ? "text-glow" : ""}`}
             style={{
-              color: i === 0 ? "#f2f2f2" : "#00f5ff",
+              color: i === 0 ? "#fff5f5" : "#ff2a3d",
               animation: phase === "name" ? `glitch 0.3s steps(2) ${0.6 + i * 0.18}s 2` : undefined,
               textShadow:
                 i === 1
-                  ? "0 0 40px rgba(0,245,255,0.5), 0 0 80px rgba(0,245,255,0.25)"
-                  : undefined,
+                  ? "0 0 40px rgba(255,42,61,0.6), 0 0 80px rgba(255,42,61,0.3)"
+                  : "0 0 24px rgba(255,245,245,0.25)",
             }}
           >
             {word}
