@@ -56,7 +56,7 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-contain object-top bg-bg"
+        className="absolute inset-0 w-full h-full object-cover object-top bg-bg"
       />
 
       {/* Vignette */}
