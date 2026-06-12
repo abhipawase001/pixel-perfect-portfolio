@@ -14,11 +14,12 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
       const t = setTimeout(onDone, 600);
       return () => clearTimeout(t);
     }
-    // Text appears immediately; video keeps playing underneath
-    setPhase("name");
-    const t2 = setTimeout(() => setPhase("out"), 1700);
-    const t3 = setTimeout(onDone, 2000);
+    // Text appears after 3s of video; video keeps playing underneath
+    const t1 = setTimeout(() => setPhase("name"), 3000);
+    const t2 = setTimeout(() => setPhase("out"), 4700);
+    const t3 = setTimeout(onDone, 5000);
     return () => {
+      clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);
     };
