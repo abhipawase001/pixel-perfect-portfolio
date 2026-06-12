@@ -185,7 +185,7 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
                     src={milanImg}
                     alt="Milan Tours"
                     loading="lazy"
-                    className="w-full aspect-[16/9] object-cover border border-line grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="w-full aspect-[16/9] object-cover border border-line grayscale hover:grayscale-0 transition-all duration-700"
                   />
                 </Reveal>
               </div>
