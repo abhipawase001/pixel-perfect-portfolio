@@ -168,7 +168,7 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
                   />
                 </Reveal>
 
-                <Reveal className="bg-bg p-6 group hover:bg-card transition-colors" index={3}>
+                <Reveal className="bg-bg p-6 group hover:bg-card transition-colors" index={1}>
                   <div className="flex justify-between items-start mb-12">
                     <span className="font-mono text-xs text-ink/60">03 / FULL-STACK</span>
                     <div className="size-10 border border-line grid place-items-center group-hover:bg-cyan group-hover:border-cyan transition-colors">
