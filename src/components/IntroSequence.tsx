@@ -7,19 +7,17 @@ const INTRO_LINES = ["Welcome", "To", "My Portfolio"];
 export function IntroSequence({ onDone }: { onDone: () => void }) {
   const reduce = useReducedMotion();
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [phase, setPhase] = useState<"walk" | "name" | "out">("walk");
+  const [phase, setPhase] = useState<"walk" | "name" | "out">("name");
 
   useEffect(() => {
     if (reduce) {
       const t = setTimeout(onDone, 600);
       return () => clearTimeout(t);
     }
-    // Text appears after 3s of video; video keeps playing underneath
-    const t1 = setTimeout(() => setPhase("name"), 3000);
+    // Text appears immediately with the video
     const t2 = setTimeout(() => setPhase("out"), 4700);
     const t3 = setTimeout(onDone, 5000);
     return () => {
-      clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);
     };
