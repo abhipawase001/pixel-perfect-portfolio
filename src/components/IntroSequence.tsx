@@ -106,15 +106,15 @@ export function IntroSequence({ onDone }: { onDone: () => void }) {
           {INTRO_LINES.map((line, i) => (
             <motion.span
               key={line}
-              initial={{ opacity: 0, y: 42, scale: 1.18, filter: "blur(14px)" }}
+              initial={false}
               animate={
                 phase !== "walk"
                   ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
                   : { opacity: 0, y: 42, scale: 1.18, filter: "blur(14px)" }
               }
               transition={{
-                duration: 0.55,
-                delay: phase !== "walk" ? i * 0.14 : 0,
+                duration: phase === "name" ? 0 : 0.55,
+                delay: 0,
                 ease: [0.16, 1, 0.3, 1] as const,
               }}
               className={`font-display font-extrabold leading-none tracking-normal inline-block ${
