@@ -148,7 +148,7 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
 
               {/* Sub project grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-line border border-line">
-                <Reveal className="bg-bg p-6 group hover:bg-card transition-colors" index={2}>
+                <Reveal className="bg-bg p-6 group hover:bg-card transition-colors" index={1}>
                   <div className="flex justify-between items-start mb-12">
                     <span className="font-mono text-xs text-ink/60">02 / URBAN TRANSIT</span>
                     <div className="size-10 border border-line grid place-items-center group-hover:bg-cyan group-hover:border-cyan transition-colors">
