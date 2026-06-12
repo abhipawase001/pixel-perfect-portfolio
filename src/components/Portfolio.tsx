@@ -198,7 +198,7 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
                 <img
                   src={portrait.url}
                   alt="Abhijit Pawase"
-                  className="w-full aspect-[3/4] object-cover border border-line grayscale hover:grayscale-0 transition-all duration-700 mb-4"
+                  className="w-full aspect-[3/4] object-cover border border-line mb-4"
                 />
                 <div className="flex justify-between font-mono text-[10px] tracking-widest text-cyan">
                   <span>SUBJECT_01</span>
