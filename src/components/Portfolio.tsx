@@ -62,7 +62,10 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
               </h1>
             </div>
             <div className="p-6 md:p-10 w-full md:w-80 flex flex-col justify-between bg-card">
-              <div className="font-mono text-[10px] leading-relaxed text-ink uppercase tracking-wider">
+              <div
+                className="font-mono text-[10px] leading-relaxed uppercase tracking-wider"
+                style={{ color: "#ff2d2d", textShadow: "0 0 6px #ff2d2d, 0 0 14px rgba(255,45,45,0.7)" }}
+              >
                 AI Architect & Full-Stack Engineer
                 <br />
                 Google Student Ambassador
@@ -148,7 +151,7 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
 
               {/* Sub project grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-line border border-line">
-                <Reveal className="bg-bg p-6 group hover:bg-card transition-colors" index={1}>
+                <Reveal className="bg-bg p-6 group transition-colors" index={1}>
                   <div className="flex justify-between items-start mb-12">
                     <span className="font-mono text-xs text-ink/60">02 / URBAN TRANSIT</span>
                     <div className="size-10 border border-line grid place-items-center group-hover:bg-cyan group-hover:border-cyan transition-colors">
@@ -169,7 +172,7 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
                   />
                 </Reveal>
 
-                <Reveal className="bg-bg p-6 group hover:bg-card transition-colors" index={1}>
+                <Reveal className="bg-bg p-6 group transition-colors" index={1}>
                   <div className="flex justify-between items-start mb-12">
                     <span className="font-mono text-xs text-ink/60">03 / FULL-STACK</span>
                     <div className="size-10 border border-line grid place-items-center group-hover:bg-cyan group-hover:border-cyan transition-colors">
