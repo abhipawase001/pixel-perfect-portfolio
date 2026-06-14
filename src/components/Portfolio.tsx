@@ -82,7 +82,7 @@ export function Portfolio({ onReplayIntro }: { onReplayIntro?: () => void }) {
                       <span className="absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75 animate-ping" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan" />
                     </span>
-                    <span className="text-sm font-semibold tracking-wide">AVAILABLE FOR HIRE</span>
+                    <span className="text-sm font-semibold tracking-wide" style={{ color: "#080808", textShadow: "0 0 8px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.3)" }}>AVAILABLE FOR HIRE</span>
                   </div>
                 </div>
                 {onReplayIntro && (
